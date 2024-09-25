@@ -10,10 +10,11 @@ env:
 
 jobs:
   test:
+    environment: DatabaseConnection
     env: 
       MONGODB_CLUSTER_ADDRESS: cluster0.lbb1v.mongodb.net
-      MONGODB_USERNAME: GithubAction
-      MONGODB_PASSWORD: 3iAB4e3KDoAD9wPo
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       PORT: 8080
     runs-on: ubuntu-latest
     steps:
